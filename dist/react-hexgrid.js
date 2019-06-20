@@ -1257,7 +1257,8 @@
         var _props = this.props,
             id = _props.id,
             link = _props.link,
-            size = _props.size;
+            size = _props.size,
+            patternSize = _props.patternSize;
 
 
         return _react2.default.createElement(
@@ -1282,7 +1283,8 @@
     patternSize: _propTypes2.default.object
   };
   Pattern.defaultProps = {
-    size: new _Point2.default(10, 10)
+    size: new _Point2.default(10, 10),
+    patternSize: new _Point2.default(1, 1)
   };
   exports.default = Pattern;
 });

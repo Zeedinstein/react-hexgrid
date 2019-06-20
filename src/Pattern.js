@@ -11,11 +11,12 @@ class Pattern extends Component {
     patternSize: PropTypes.object
   };
   static defaultProps = {
-    size: new Point(10, 10)
+    size: new Point(10, 10),
+    patternSize: new Point(1, 1)
   };
 
   render() {
-    const { id, link, size } = this.props;
+    const { id, link, size, patternSize } = this.props;
 
     return (
       <defs>
