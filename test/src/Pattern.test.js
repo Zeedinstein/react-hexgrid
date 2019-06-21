@@ -8,6 +8,7 @@ test('Pattern should render correctly with default props', () => {
     <Pattern
       id={'test1'}
       link={'http://example.com'}
+      patternSize={{ x: 100, y: 200 }}
       size={{ x: 100, y: 200 }}
     />,
   ).toJSON();
@@ -19,6 +20,7 @@ test('Pattern should render correctly with custom props', () => {
     <Pattern
       id={'test2'}
       link={'http://example.com'}
+      patternSize={{ x: 200, y: 100 }}
       size={{ x: 200, y: 100 }}
     />,
   ).toJSON();

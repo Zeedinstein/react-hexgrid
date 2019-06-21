@@ -19,7 +19,7 @@ class Text extends Component {
   render() {
     const { children, x, y, className } = this.props;
     return (
-      <text x={x || 0} y={y ? y : '0.3em'} className={className} textAnchor="middle">{children}</text>
+      <foreignObject x={x || 0} y={y ? y : '0.3em'} className={className} textAnchor="middle">{children}</foreignObject>
     );
   }
 }
