@@ -246,14 +246,11 @@
     _createClass(HexGrid, [{
       key: 'render',
       value: function render() {
-        var _props = this.props,
-            width = _props.width,
-            height = _props.height,
-            viewBox = _props.viewBox;
+        var viewBox = this.props.viewBox;
 
         return _react2.default.createElement(
           'svg',
-          { className: 'grid', width: width, height: height, viewBox: viewBox, version: '1.1', xmlns: 'http://www.w3.org/2000/svg' },
+          { className: 'grid', viewBox: viewBox, version: '1.1', xmlns: 'http://www.w3.org/2000/svg' },
           this.props.children
         );
       }
@@ -263,14 +260,10 @@
   }(_react.Component);
 
   HexGrid.propTypes = {
-    width: _propTypes2.default.oneOfType([_propTypes2.default.string.isRequired, _propTypes2.default.number.isRequired]),
-    height: _propTypes2.default.oneOfType([_propTypes2.default.string.isRequired, _propTypes2.default.number.isRequired]),
     viewBox: _propTypes2.default.string,
     children: _propTypes2.default.node.isRequired
   };
   HexGrid.defaultProps = {
-    width: 800,
-    height: 600,
     viewBox: "-50 -50 100 100"
   };
   exports.default = HexGrid;
@@ -816,11 +809,20 @@
             children = _props.children,
             x = _props.x,
             y = _props.y,
-            className = _props.className;
+            className = _props.className,
+            textAnchor = _props.textAnchor,
+            height = _props.height,
+            width = _props.width;
 
         return _react2.default.createElement(
-          'text',
-          { x: x || 0, y: y ? y : '0.3em', className: className, textAnchor: 'middle' },
+          'foreignObject',
+          {
+            x: x ? x : '0.3em',
+            y: y ? y : '0.3em',
+            className: className,
+            textAnchor: textAnchor,
+            height: height,
+            width: width },
           children
         );
       }
@@ -833,7 +835,10 @@
     children: _propTypes2.default.string,
     x: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
     y: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-    className: _propTypes2.default.string
+    className: _propTypes2.default.string,
+    height: _propTypes2.default.number,
+    width: _propTypes2.default.number,
+    textAnchor: _propTypes2.default.string
   };
   exports.default = Text;
 });
