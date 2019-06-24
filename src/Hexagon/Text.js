@@ -10,17 +10,21 @@ class Text extends Component {
     className: PropTypes.string,
     height: PropTypes.number,
     width: PropTypes.number,
-    textAnchor: PropTypes.string
+    textAnchor: PropTypes.string,
+    preserveAspectRatio: PropTypes.string,
+    transform: PropTypes.string
   }
 
   render() {
-    const { children, x, y, className, textAnchor, height, width } = this.props
+    const { children, x, y, className, textAnchor, height, width, preserveAspectRatio, transform } = this.props
     return (
       <foreignObject
         x={x ? x : '0.3em'}
         y={y ? y : '0.3em'}
         className={className}
         textAnchor={textAnchor}
+        preserveAspectRatio={preserveAspectRatio ? preserveAspectRatio : 'none'}
+        transform={transform ? transform : ''}
         height={height}
         width={width}>
         {children}

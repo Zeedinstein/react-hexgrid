@@ -812,7 +812,9 @@
             className = _props.className,
             textAnchor = _props.textAnchor,
             height = _props.height,
-            width = _props.width;
+            width = _props.width,
+            preserveAspectRatio = _props.preserveAspectRatio,
+            transform = _props.transform;
 
         return _react2.default.createElement(
           'foreignObject',
@@ -821,6 +823,8 @@
             y: y ? y : '0.3em',
             className: className,
             textAnchor: textAnchor,
+            preserveAspectRatio: preserveAspectRatio ? preserveAspectRatio : 'none',
+            transform: transform ? transform : '',
             height: height,
             width: width },
           children
@@ -838,7 +842,9 @@
     className: _propTypes2.default.string,
     height: _propTypes2.default.number,
     width: _propTypes2.default.number,
-    textAnchor: _propTypes2.default.string
+    textAnchor: _propTypes2.default.string,
+    preserveAspectRatio: _propTypes2.default.string,
+    transform: _propTypes2.default.string
   };
   exports.default = Text;
 });
